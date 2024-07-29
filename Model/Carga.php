@@ -156,4 +156,21 @@ class Carga {
 
         return $this;
     }
+
+
+
+    public function toModel($iCodigo, $iPeso, $iValor, $iDestino, $iVeiculo, $iCliente, $iFuncionario, $iDistancia) {
+        $this->setCodigo($iCodigo);
+        $this->setPeso($iPeso);
+        $this->setValor($iValor);
+        $this->setDestino($iDestino);
+        $this->setVeiculo($iVeiculo);
+        $this->setCliente($iCliente);
+        $this->setFuncionario($iFuncionario);
+        $this->setDistancia($iDistancia);
+    }
+
+    public function fromModel() {
+        return '<tr><td>' . $this->getCodigo() . '</td></tr>';
+    }
 }
