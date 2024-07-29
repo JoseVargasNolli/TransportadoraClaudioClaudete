@@ -6,10 +6,6 @@ class Destino {
     private $iCodigo;
     private $sNome;
 
-
-    
-
-
     /**
      * Get the value of iCodigo
      */
@@ -45,4 +41,14 @@ class Destino {
 
         return $this;
     }
+
+
+    public function fromModel() {
+        return "Codigo:" . $this->getCodigo() . "/" . "Nome:" .  $this->getNome();
+    }
+
+    public function toModel($iCodigo, $sNome) {
+        $this->setCodigo($iCodigo);
+        $this->setNome($sNome);
+    } 
 }
