@@ -73,7 +73,7 @@ class Funcionario  extends ModelBase {
     /**
      * Get the value of Nome
      */
-    public function geNome()
+    public function getNome()
     {
         return $this->Nome;
     }
@@ -81,7 +81,7 @@ class Funcionario  extends ModelBase {
     /**
      * Set the value of Nome
      */
-    public function seNome($Nome): self
+    public function setNome($Nome): self
     {
         $this->Nome = $Nome;
 
@@ -111,11 +111,12 @@ class Funcionario  extends ModelBase {
         $this->setCodigo($iCodigo);
         $this->setSalario($iSalario);
         $this->setCpf($sCpf);
-        $this->seNome();
+        $this->setNome($Nome);
+        $this->setCnh($sCnh);
     }
 
     public function getArray() {
-        return [$this->getCodigo() , $this->getNome()];
+        return [$this->getCodigo(), $this->getSalario(), $this->getCpf(), $this->getNome(), $this->getCnh()];
     }
 
 

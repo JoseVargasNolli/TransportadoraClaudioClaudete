@@ -1,7 +1,7 @@
 <?php
 
-
-class Veiculos {
+require_once('..\Model\ModelBase.php');
+class Veiculos extends ModelBase {
 
     private $iCodigo;
     private $sMarca;
@@ -118,5 +118,23 @@ class Veiculos {
         $this->sTipoConsumo = $sTipoConsumo;
 
         return $this;
+    }
+       
+    public function toModel($iCodigo, $sMarca, $sCor, $sPlaca, $sChassi, $sTipoConsumo) {
+        $this->setCodigo($iCodigo);
+        $this->setMarca($sMarca);
+        $this->setCor($sCor);
+        $this->setPlaca($sPlaca);
+        $this->setChassi($sChassi);
+        $this->setTipoConsumo($sTipoConsumo);
+    }
+
+    public function getArray() {
+        return [$this->getCodigo(), $this->getMarca(), $this->getCor(), $this->getPlaca(), $this->getChassi(), $this->getTipoConsumo()];
+    }
+
+
+    public function fromModel()  {
+        
     }
 }

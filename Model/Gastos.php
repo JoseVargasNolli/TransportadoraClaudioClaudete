@@ -1,7 +1,7 @@
 <?php
-// cod_gasto, desc_gasto, Valor_gasto, Data_gasto, tipo_gasto, origem_gasto
+require_once('..\Model\ModelBase.php');
 
-class Gastos {
+class Gastos extends ModelBase {
 
     private $iCodigo;
     private $sDescricao;
@@ -117,5 +117,38 @@ class Gastos {
         $this->iOrigem = $iOrigem;
 
         return $this;
+    }
+    
+
+    public function getKm()
+    {
+        return $this->iKm;
+    }
+
+    public function setKm($iKm): self
+    {
+        $this->iKm = $iKm;
+
+        return $this;
+    }
+
+
+    public function toModel($iCodigo, $sDescricao, $iValor, $sData, $iTipo, $iOrigem, $iKm) {
+        $this->setCodigo($iCodigo);
+        $this->setDescricao($sDescricao);
+        $this->setValor($iValor);
+        $this->setData($sData);
+        $this->setTipo($iTipo);
+        $this->setOrigem($iOrigem);
+        $this->setKm($iKm);
+    }
+
+    public function getArray() {
+        return [$this->getCodigo(), $this->getDescricao(), $this->getValor(), $this->getData(), $this->getTipo(), $this->getOrigem(), $this->getKm()];
+    }
+
+
+    public function fromModel()  {
+        
     }
 }
