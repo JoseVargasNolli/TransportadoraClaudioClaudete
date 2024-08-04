@@ -1,11 +1,10 @@
 <?php
+require_once('..\Model\ModelBase.php');
 
-class Cliente {
+class Cliente extends ModelBase {
 
     private $iCodigo;
     private $sNome;
-
-
 
     /**
      * Get the value of sNome
@@ -41,5 +40,18 @@ class Cliente {
         $this->iCodigo = $iCodigo;
 
         return $this;
+    }
+    
+    public function toModel($iCodigo, $sNome) {
+        $this->setCodigo($iCodigo);
+        $this->setNome($sNome);
+    }
+
+    public function getArray() {
+        return [$this->getCodigo() , $this->getNome()];
+    }
+
+    public function fromModel() {
+        return '<tr><td>' . $this->getCodigo() . '</td></tr>';
     }
 }

@@ -1,7 +1,7 @@
 <?php
-//cod_car, peso_car, valor_car, destino, veiculo, cliente, funcionario, distancia
+require_once('..\Model\ModelBase.php');
 
-class Carga {
+class Carga  extends ModelBase {
 
 
     private $iCodigo;
@@ -168,6 +168,10 @@ class Carga {
         $this->setCliente($iCliente);
         $this->setFuncionario($iFuncionario);
         $this->setDistancia($iDistancia);
+    }
+
+    public function getArray() {
+        return [$this->getCodigo() , $this->getPeso() , $this->getValor() , $this->getDestino() , $this->getCliente() , $this->getVeiculo() , $this->getFuncionario() , $this->getDistancia()];
     }
 
     public function fromModel() {

@@ -1,8 +1,8 @@
 <?php
 
 
-
-class Funcionario {
+require_once('..\Model\ModelBase.php');
+class Funcionario  extends ModelBase {
 
     /** @var Integer  */
     private $iCodigo;
@@ -104,5 +104,22 @@ class Funcionario {
         $this->sCnh = $sCnh;
 
         return $this;
+    }
+
+    
+    public function toModel($iCodigo, $iSalario, $sCpf, $Nome, $sCnh) {
+        $this->setCodigo($iCodigo);
+        $this->setSalario($iSalario);
+        $this->setCpf($sCpf);
+        $this->seNome();
+    }
+
+    public function getArray() {
+        return [$this->getCodigo() , $this->getNome()];
+    }
+
+
+    public function fromModel()  {
+        
     }
 }
