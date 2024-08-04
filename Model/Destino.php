@@ -1,7 +1,7 @@
 <?php
 
-
-class Destino {
+require_once('..\Model\ModelBase.php');
+class Destino  extends ModelBase {
 
     private $iCodigo;
     private $sNome;
@@ -43,12 +43,19 @@ class Destino {
     }
 
 
-    public function fromModel() {
-        return "Codigo:" . $this->getCodigo() . "/" . "Nome:" .  $this->getNome();
-    }
-
     public function toModel($iCodigo, $sNome) {
         $this->setCodigo($iCodigo);
         $this->setNome($sNome);
-    } 
+    }
+
+    public function getArray() {
+        return [$this->getCodigo() , $this->getNome()];
+    }
+
+
+    public function fromModel()  {
+        
+    }
+
+    
 }

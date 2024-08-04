@@ -36,11 +36,19 @@ class SqlPostgress {
    * @return PDOStatement
    */
   public function executeQuery($sSql, $oValores = []) {
-      try {
-          return $this->oConexao->query($sSql, PDO::FETCH_ASSOC);
-      } catch (\Throwable $th) {
-          echo $th;
-      }
+    try {
+        return $this->oConexao->query($sSql, PDO::FETCH_ASSOC);
+    } catch (\Throwable $th) {
+        echo $th;
+    }
+  }
+
+  public function executeInsert($sSql,  $aValores) {
+    try {
+        return $this->oConexao->prepare($sSql)->execute($aValores);
+    } catch (\Throwable $th) {
+        echo $th;
+    }
   }
 
   /**
