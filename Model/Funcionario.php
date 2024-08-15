@@ -121,6 +121,6 @@ class Funcionario  extends ModelBase {
 
 
     public function fromModel()  {
-        
+        return '<tr><td>' . $this->getCodigo() . '</td><td>' . $this->getSalario() . '</td><td>' . $this->getCpf() . '</td><td>' . $this->getNome() . '</td><td>' . $this->getCnh() . '</td><tr>';
     }
 }

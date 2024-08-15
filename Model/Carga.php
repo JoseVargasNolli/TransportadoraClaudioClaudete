@@ -175,6 +175,6 @@ class Carga  extends ModelBase {
     }
 
     public function fromModel() {
-        return '<tr><td>' . $this->getCodigo() . '</td></tr>';
+        return '<tr><td>' . $this->getPeso() . '</td><td>' . $this->getValor() . '</td><td>' . $this->getVeiculo() . '</td><td>' . $this->getDistancia() . '</td><td>' . $this->getFuncionario() . '</td></tr>';
     }
 }

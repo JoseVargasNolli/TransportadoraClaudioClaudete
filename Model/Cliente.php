@@ -52,6 +52,6 @@ class Cliente extends ModelBase {
     }
 
     public function fromModel() {
-        return '<tr><td>' . $this->getCodigo() . '</td></tr>';
+        return '<tr><td>' . $this->getCodigo() . '</td><td>' . $this->getNome() . '</td></tr>';
     }
 }

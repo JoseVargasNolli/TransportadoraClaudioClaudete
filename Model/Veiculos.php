@@ -135,6 +135,6 @@ class Veiculos extends ModelBase {
 
 
     public function fromModel()  {
-        
+        return '<tr><td>' . $this->getCodigo() . '</td><td>' . $this->getMarca() . '</td><td>' . $this->getCor() . '</td><td>' . $this->getPlaca() . '</td><td>' . $this->getChassi() . '</td><td>' . $this->getTipoConsumo() . '</td></tr>';
     }
 }

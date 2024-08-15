@@ -54,7 +54,7 @@ class Destino  extends ModelBase {
 
 
     public function fromModel()  {
-        
+        return '<tr><td>' . $this->getCodigo() . '</td><td>' . $this->getNome() . '</td></tr>';
     }
 
     

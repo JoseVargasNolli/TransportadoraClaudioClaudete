@@ -149,6 +149,6 @@ class Gastos extends ModelBase {
 
 
     public function fromModel()  {
-        
+        return '<tr><td>' . $this->getCodigo() . '</td><td>' . $this->getDescricao() . '</td><td>' . $this->getValor() . '</td><td>' . $this->getData() . '</td><td>' . $this->getTipo() . '</td><td>' . $this->getOrigem() . '</td><td>' . $this->getKm() . '</td></tr>'; 
     }
 }
