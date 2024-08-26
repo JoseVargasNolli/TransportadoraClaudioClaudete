@@ -9,6 +9,6 @@
     <script  src="https://code.jquery.com/jquery-3.7.1.slim.js"  integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="  crossorigin="anonymous"></script>
 </head>
 <body>
-   <script>buscarTela(1)</script>
+   <script>insertTela(5, 'testando')</script>
 </body>
 </html>

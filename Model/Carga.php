@@ -5,11 +5,11 @@ class Carga  extends ModelBase {
 
 
     private $iCodigo;
-    private $iPeso;
     private $iValor;
     private $iDestino;
     private $iVeiculo;
     private $iCliente;
+    private $iPrecoKm;
     private $iFuncionario;
     private $iDistancia;
 
@@ -27,24 +27,6 @@ class Carga  extends ModelBase {
     public function setCodigo($iCodigo): self
     {
         $this->iCodigo = $iCodigo;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of iPeso
-     */
-    public function getPeso()
-    {
-        return $this->iPeso;
-    }
-
-    /**
-     * Set the value of iPeso
-     */
-    public function setPeso($iPeso): self
-    {
-        $this->iPeso = $iPeso;
 
         return $this;
     }
@@ -156,12 +138,26 @@ class Carga  extends ModelBase {
 
         return $this;
     }
+    
+
+    public function getPrecoKm()
+    {
+        return $this->iPrecoKm;
+    }
+
+    
+    public function setPrecoKm($ikm): self
+    {
+        $this->iPrecoKm = $ikm;
+
+        return $this;
+    }
 
 
 
-    public function toModel($iCodigo, $iPeso, $iValor, $iDestino, $iVeiculo, $iCliente, $iFuncionario, $iDistancia) {
+    public function toModel($iCodigo, $iPrecoKm, $iValor, $iDestino, $iVeiculo, $iCliente, $iFuncionario, $iDistancia) {
         $this->setCodigo($iCodigo);
-        $this->setPeso($iPeso);
+        $this->setPrecoKm($iPrecoKm);
         $this->setValor($iValor);
         $this->setDestino($iDestino);
         $this->setVeiculo($iVeiculo);
@@ -171,10 +167,10 @@ class Carga  extends ModelBase {
     }
 
     public function getArray() {
-        return [$this->getCodigo() , $this->getPeso() , $this->getValor() , $this->getDestino() , $this->getCliente() , $this->getVeiculo() , $this->getFuncionario() , $this->getDistancia()];
+        return [$this->getCodigo() , $this->getPrecoKm(), $this->getValor() , $this->getDestino() , $this->getCliente() , $this->getVeiculo() , $this->getFuncionario() , $this->getDistancia()];
     }
 
     public function fromModel() {
-        return '<tr><td>' . $this->getPeso() . '</td><td>' . $this->getValor() . '</td><td>' . $this->getVeiculo() . '</td><td>' . $this->getDistancia() . '</td><td>' . $this->getFuncionario() . '</td></tr>';
+        return '<tr><td>' . $this->getValor() . '</td><td>' . $this->getVeiculo() . '</td><td>' . $this->getDistancia() . '</td><td>' . $this->getFuncionario() . '</td></tr>';
     }
 }

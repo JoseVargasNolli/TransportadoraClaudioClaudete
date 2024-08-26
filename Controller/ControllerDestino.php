@@ -16,5 +16,16 @@ class ControllerDestino {
         return $oViewDestino->getTable($oDestino->getSelectAll());
     }
 
+
+    public function insert($iCodigo, $sNome) {
+        $oDestino = new DestinoDao();
+        $oModel =  new Destino();
+
+        $oModel->setCodigo($iCodigo);
+        $oModel->setNome($sNome);
+
+        $oDestino->insertModel($oModel);
+        return true;
+    }
     
 }

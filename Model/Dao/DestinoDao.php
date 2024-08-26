@@ -15,13 +15,11 @@ class DestinoDao extends Dao {
             $aRetorno[] =  $oModel;
         } 
         return $aRetorno;
-
-
     }
 
-    public function insertModel(ModelBase $oModel) {
-        $sSql = "INSERT INTO Destino (cod_destino, nome_destino) VALUES (?, ?)";
-        $this->getConexao()->executeInsert($sSql, $oModel->getArray());
+    public function insertModel($oModel) {
+        $sSql = "INSERT INTO public.\"Destino\"(cod_destino, nome_destino) VALUES ({$oModel->getCodigo()}, '{$oModel->getNome()}')";
+        $this->getConexao()->executeInsert($sSql);
 
     }
 }

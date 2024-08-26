@@ -6,8 +6,7 @@ class Funcionario  extends ModelBase {
 
     /** @var Integer  */
     private $iCodigo;
-    /** @var Float  */
-    private $iSalario;
+
     /** @var String  */
     private $sCpf;
     /** @var String  */
@@ -34,23 +33,6 @@ class Funcionario  extends ModelBase {
         return $this;
     }
 
-    /**
-     * Get the value of iSalario
-     */
-    public function getSalario()
-    {
-        return $this->iSalario;
-    }
-
-    /**
-     * Set the value of iSalario
-     */
-    public function setSalario($iSalario): self
-    {
-        $this->iSalario = $iSalario;
-
-        return $this;
-    }
 
     /**
      * Get the value of sCpf
@@ -109,18 +91,17 @@ class Funcionario  extends ModelBase {
     
     public function toModel($iCodigo, $iSalario, $sCpf, $Nome, $sCnh) {
         $this->setCodigo($iCodigo);
-        $this->setSalario($iSalario);
         $this->setCpf($sCpf);
         $this->setNome($Nome);
         $this->setCnh($sCnh);
     }
 
     public function getArray() {
-        return [$this->getCodigo(), $this->getSalario(), $this->getCpf(), $this->getNome(), $this->getCnh()];
+        return [$this->getCodigo(), $this->getCpf(), $this->getNome(), $this->getCnh()];
     }
 
 
     public function fromModel()  {
-        return '<tr><td>' . $this->getCodigo() . '</td><td>' . $this->getSalario() . '</td><td>' . $this->getCpf() . '</td><td>' . $this->getNome() . '</td><td>' . $this->getCnh() . '</td><tr>';
+        return '<tr><td>' . $this->getCodigo() . '</td><td>' . $this->getCpf() . '</td><td>' . $this->getNome() . '</td><td>' . $this->getCnh() . '</td><tr>';
     }
 }

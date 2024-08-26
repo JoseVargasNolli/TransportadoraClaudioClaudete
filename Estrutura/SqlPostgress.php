@@ -43,9 +43,9 @@ class SqlPostgress {
     }
   }
 
-  public function executeInsert($sSql,  $aValores) {
+  public function executeInsert($sSql,  $aValores = []) {
     try {
-        return $this->oConexao->prepare($sSql)->execute($aValores);
+        return $this->oConexao->prepare($sSql)->execute();
     } catch (\Throwable $th) {
         echo $th;
     }
